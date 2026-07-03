@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Touchable
   - null
+  - Enemy
+  - TouchableTower
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - interact
   - Water
   - UI
-  - 
+  - noInteract
   - 
   - 
   - 

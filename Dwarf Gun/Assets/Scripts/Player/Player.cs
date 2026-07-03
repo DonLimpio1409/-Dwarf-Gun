@@ -61,9 +61,9 @@ public class Player : MonoBehaviour
 
             Collider2D hit = Physics2D.OverlapPoint(worldPos, interact);
 
-            if (hit != null && hit.CompareTag("Touchable"))
+            if (hit != null && hit.CompareTag("TouchableTower"))
             {
-                hit.GetComponent<Tower>().MakeIt();
+                hit.transform.parent.GetComponent<Tower>().MakeIt();
             }
             else
             {

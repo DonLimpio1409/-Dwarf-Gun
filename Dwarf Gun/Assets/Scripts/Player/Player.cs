@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public InputActionReference moveAction;
     public InputActionReference interactAction;
     public InputActionReference buildAction;
+    public InputActionReference shootAction;
 
     [Header("Movimiento")]
     private Vector2 move;
@@ -19,16 +20,23 @@ public class Player : MonoBehaviour
     public GameObject towerGenerate;
     public LayerMask interact;
 
+    [Header("Disparo")]
+    public GameObject bulletPrefab;
+    public GameObject gun;
+    float cooldownShot = 1f;
+
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
         Move();
         Interact();
         Built();
+        MoveGun();
+        Shot();
     }
 
     void FixedUpdate()
@@ -83,4 +91,26 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void MoveGun()
+    {
+        //Obtener posición del ratón en pantalla
+        Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+
+        Vector2 direction = mouseWorldPos - gun.transform.position;
+
+        //Calcular ángulo en grados
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        gun.transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    private void Shot()
+    {
+        cooldownShot -= Time.deltaTime;
+        if(shootAction.action.IsPressed() && cooldownShot <= 0f)
+        {
+            Instantiate(bulletPrefab, gun.transform.position, gun.transform.rotation);
+            cooldownShot = 1f;
+        }
+    }
 }

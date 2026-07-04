@@ -22,7 +22,7 @@ public class Tower : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            touchable.tag = "Touchable";
+            touchable.tag = "TouchableTower";
         }
 
         if(collision.CompareTag("Enemy"))
@@ -54,7 +54,7 @@ public class Tower : MonoBehaviour
         Debug.Log("MakeIt called");
         level++;
         towerMidle.SetActive(true);
-
+        
         if(level == 2)
         {
             towerShootGun.SetActive(true);
@@ -62,6 +62,10 @@ public class Tower : MonoBehaviour
     }
     void Update()
     {
+        if(level < 2)
+        {
+            return;
+        }
         LookAtEnemy();
         shot();
         enemyCount = enemiesInRange.Count;

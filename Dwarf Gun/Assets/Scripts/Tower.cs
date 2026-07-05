@@ -9,8 +9,8 @@ public class Tower : MonoBehaviour
 
     [Header("Disparo")]
     public GameObject bulletPrefab;
-    bool enemyIn;
-    float cooldownShot = 1f;
+    public bool enemyIn;
+    public float cooldownShot = 1f;
 
     [Header("Piezas torre")]
     public GameObject towerMidle;
@@ -44,7 +44,10 @@ public class Tower : MonoBehaviour
         {
             //Remover enemigo de la lista de enemigos en rango
             enemiesInRange.Remove(collision.gameObject);
-            enemyIn = false;
+            if(enemiesInRange.Count == 0)
+            {
+                enemyIn = false;
+            }
         }
     }
 
@@ -107,6 +110,7 @@ public class Tower : MonoBehaviour
         {
             GameObject bulletFly = Instantiate(bulletPrefab, towerShootGun.transform.position, towerShootGun.transform.rotation);
             cooldownShot = 1f; // Reiniciar el tiempo de espera
+            Debug.Log("Bullet instantiated");
         }
     }
 }

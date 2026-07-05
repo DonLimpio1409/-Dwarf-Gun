@@ -233,6 +233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tower
   enemyCount: 0
   bulletPrefab: {fileID: 5608274625062930493, guid: 3e1e806754d56e446957e1f4aeaaa438, type: 3}
+  enemyIn: 0
+  cooldownShot: 1
   towerMidle: {fileID: 4536421239334751799}
   towerShootGun: {fileID: 1354219885706220647}
   touchable: {fileID: 5177547063540207308}
@@ -373,7 +375,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7826429145536238103}
   - component: {fileID: 7822884465307030415}
-  - component: {fileID: 5859385789498683074}
   m_Layer: 3
   m_Name: Touchable
   m_TagString: Untagged
@@ -442,39 +443,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!58 &5859385789498683074
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5177547063540207308}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 7

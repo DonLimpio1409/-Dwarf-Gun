@@ -4,6 +4,7 @@ public class BasicBullet : MonoBehaviour
 {
     float liveTime = 10f;
     float speed = 10f;
+    public int bulletDamage = 1;
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +23,6 @@ public class BasicBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }

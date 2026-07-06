@@ -1,53 +1,50 @@
 using UnityEngine;
 
-public class BasicEnemy : MonoBehaviour
+public class EnemyBase : MonoBehaviour
 {
     [Header("Funcionamiento")]
     public GameObject objective;
-    public GameObject basicBullet;
+    public GameObject player;
+    public GameObject bullet;
 
     [Header("Stats")]
-    float speed = 3f;
-    [SerializeField] int live = 3;
+    protected float speed = 0f;
+    protected int live = 0;
+    protected int moneyOnDeath = 0;
 
     [Header("Separación")]
-    public float separationDistance = 0.8f;   // Distancia mínima deseada
-    public float separationForce = 2f;        // Fuerza de separación
+    public float separationDistance = 0.8f;  
+    public float separationForce = 2f;
 
     void Update()
     {
         followObjective();
     }
 
-    private void followObjective()
+    public virtual void followObjective()
     {
         if (objective != null)
         {
-            transform.position = Vector2.MoveTowards(
-                transform.position,
-                objective.transform.position,
-                speed * Time.deltaTime
-            );
+            Debug.Log("Persiguiendo");
+            transform.position = Vector2.MoveTowards(transform.position, objective.transform.position, speed * Time.deltaTime);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
-            if(collision.gameObject == basicBullet)
-            {
-                live -= basicBullet.GetComponent<BasicBullet>().bulletDamage;
-            }
+            live -= bullet.GetComponent<BasicBullet>().bulletDamage;
 
             if (live <= 0)
             {
                 Destroy(gameObject);
+                player.GetComponent<Player>().money += moneyOnDeath;
             }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
@@ -66,4 +63,5 @@ public class BasicEnemy : MonoBehaviour
             }
         }
     }
+
 }

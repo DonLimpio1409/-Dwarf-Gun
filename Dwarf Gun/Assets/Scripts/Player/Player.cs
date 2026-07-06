@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
 
     [Header("Movimiento")]
     private Vector2 move;
-    [SerializeField] private float moveSpeed = 5f;
     private Rigidbody2D rb;
 
     [Header("Interactuar")]
@@ -24,6 +23,12 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject gun;
     float cooldownShot = 1f;
+
+    [Header("Stats")]
+    public int live = 3;
+    public int money = 0;
+    [SerializeField] private float moveSpeed = 5f;
+
 
 
     void Awake()

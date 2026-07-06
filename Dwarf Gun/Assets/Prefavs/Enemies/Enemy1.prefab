@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 289093823635530330}
   - component: {fileID: 8728264669133721039}
-  - component: {fileID: 8744619737553453265}
+  - component: {fileID: 5298297852846480618}
   - component: {fileID: 8204877343054761785}
   - component: {fileID: 4800823560632634333}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &8744619737553453265
+--- !u!114 &5298297852846480618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,11 +105,15 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d605035f608825944bbfe7ef40aa3bae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  objective: {fileID: 7288781656870626860, guid: 8c2dadbad1c35814eaed0fc0a580eab7, type: 3}
-  basicBullet: {fileID: 5608274625062930493, guid: 3e1e806754d56e446957e1f4aeaaa438, type: 3}
-  separationDistance: 5
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy1
+  objective: {fileID: 0}
+  player: {fileID: 0}
+  bullet: {fileID: 5608274625062930493, guid: 3e1e806754d56e446957e1f4aeaaa438, type: 3}
+  separationDistance: 0.8
   separationForce: 2
+  speed1: 2
+  live1: 2
+  moneyOnDeath1: 2
 --- !u!61 &8204877343054761785
 BoxCollider2D:
   m_ObjectHideFlags: 0

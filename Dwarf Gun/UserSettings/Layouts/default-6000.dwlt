@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 57
+  controlID: 52
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 58
+  controlID: 53
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 56}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 59
+  controlID: 54
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 0
     width: 218
     height: 636
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -246,8 +246,8 @@ MonoBehaviour:
     y: 0
     width: 460
     height: 636
-  m_MinSize: {x: 52, y: 76}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 50, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -731,12 +731,12 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: []
+      m_SelectedIDs:
+      - m_Data: 772
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1320
-      - m_Data: 50426
+      - m_Data: -2100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1538,7 +1538,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 218
     y: 79
-    width: 826
+    width: 830
     height: 610
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1604,7 +1604,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefavs
+    - Assets/Scripts/Player
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1614,7 +1614,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 76
   m_LastFolders:
-  - Assets/Prefavs
+  - Assets/Scripts/Player
   m_LastFoldersGridSize: 76
   m_LastProjectPath: C:\Users\penov\Documents\GitHub\-Dwarf-Gun\Dwarf Gun
   m_LockTracker:
@@ -1623,14 +1623,13 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 51062
+    - m_Data: 51522
     m_LastClickedID:
-      m_Data: 51062
+      m_Data: 51522
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 50752
-    - m_Data: 51062
-    - m_Data: 51066
+    - m_Data: 51314
+    - m_Data: 51428
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1663,7 +1662,7 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 50752
+    - m_Data: 51314
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1690,8 +1689,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs:
+    - m_Data: 772
+    m_LastClickedInstanceID: 772
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 47518
@@ -1709,6 +1709,7 @@ MonoBehaviour:
     - m_Data: -15096
     - m_Data: 45990
     - m_Data: 50928
+    - m_Data: 772
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
